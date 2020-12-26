@@ -1,4 +1,4 @@
-package www.zhang.studatetime;
+package com.zhang.studatetime;
 
 /**
  * CompareTest的test2

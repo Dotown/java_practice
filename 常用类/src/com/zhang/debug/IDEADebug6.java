@@ -1,4 +1,4 @@
-package www.zhang.debug;
+package com.zhang.debug;
 
 import org.junit.Test;
 

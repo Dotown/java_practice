@@ -1,4 +1,4 @@
-package www.zhang.stustring;
+package com.zhang.stustring;
 
 import org.junit.Test;
 
