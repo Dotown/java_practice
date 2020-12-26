@@ -36,5 +36,5 @@ package www.zhang.stustring;
  * @author Dotown
  * @create 2020-12-25-14:39
  */
-public class StringMethodTest {
+public class StringMethodTest3 {
 }

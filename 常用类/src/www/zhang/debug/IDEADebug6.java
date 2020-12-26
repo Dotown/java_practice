@@ -6,7 +6,7 @@ import org.junit.Test;
  * @author Dotown
  * @create 2020-12-25-21:43
  */
-public class IDEADebug {
+public class IDEADebug6 {
     @Test
     public void test(){
         String str = null;

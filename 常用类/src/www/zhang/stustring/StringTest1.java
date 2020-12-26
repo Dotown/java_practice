@@ -10,7 +10,7 @@ import org.junit.Test;
  * @author Dotown
  * @create 2020-12-24-10:57
  */
-public class StringTest {
+public class StringTest1 {
     @Test
     public void test3(){
         String s1 = "java";

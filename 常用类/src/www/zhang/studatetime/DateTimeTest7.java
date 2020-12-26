@@ -4,6 +4,7 @@ import org.junit.Test;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.util.Calendar;
 import java.util.Date;
 
 /**
@@ -12,7 +13,7 @@ import java.util.Date;
  * @author Dotown
  * @create 2020-12-25-21:12
  */
-public class DateTimeTest {
+public class DateTimeTest7 {
     @Test
     public void test1(){
         long time = System.currentTimeMillis(); //毫秒为单位的时间差。时间戳
@@ -75,4 +76,64 @@ public class DateTimeTest {
         Date date4 = sdf1.parse(s4);
         System.out.println("date4 = " + date4);//Fri Dec 25 10:19:05 CST 2020
     }
+
+    /*
+    三天打鱼  1990-01-01  问2020-12-16在打鱼还是晒网
+     */
+    @Test
+    public void test4() throws ParseException {
+
+        SimpleDateFormat sdf4 = new SimpleDateFormat("yyyy-MM-dd");
+        String str4 = "1990-01-01";
+        Date date4 = sdf4.parse(str4);
+        Date date5 = new Date();
+        long time = date5.getTime() - date4.getTime();
+        long day = time/(1000*60*60*24);
+        long answer = day%5;
+        if (answer <= 3){
+            System.out.println("打鱼");
+        }else{
+            System.out.println("晒网");
+        }
+
+    }
+
+    /*
+    Calendar日历类(抽象类)的使用
+     */
+    @Test
+    public void testCalender(){
+        //1.实例化
+        //方式一：调用子类(GregorianCalendar)的对象
+        //方式二：调用其静态方法getInstance()
+        Calendar ca = Calendar.getInstance();
+        System.out.println(ca.getClass());//返回该对象被生成的类
+
+        //2.常用方法
+        //get()
+        int day = ca.get(Calendar.DAY_OF_MONTH);
+        System.out.println("day = " + day);
+        //set()
+        ca.set(Calendar.DAY_OF_MONTH,22);   //void本身修改了
+        System.out.println("ca.get(Calendar.DAY_OF_MONTH) = " + ca.get(Calendar.DAY_OF_MONTH));
+
+        //add()
+        ca.add(Calendar.DAY_OF_MONTH,5);
+        System.out.println("ca.get(Calendar.DAY_OF_MONTH) = " + ca.get(Calendar.DAY_OF_MONTH));
+
+        //getTime()
+        Date date = ca.getTime();
+        System.out.println("date = " + date);
+
+        //setTime()
+        ca.setTime(date);
+        day = ca.get(Calendar.DAY_OF_YEAR);
+        System.out.println("day = " + day);
+        /*
+        获取月份时：一月是0，12月是11
+        获取星期时：周日是1，周六是7
+         */
+    }
+
+
 }

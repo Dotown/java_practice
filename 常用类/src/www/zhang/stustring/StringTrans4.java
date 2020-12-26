@@ -9,7 +9,7 @@ import java.util.Arrays;
  * @author Dotown
  * @create 2020-12-25-16:01
  */
-public class StringTrans {
+public class StringTrans4 {
     /*
     String 与基本数据类型、包装类之间的转换。
     String -->基本数据类型、包装类：调用包装类的静态方法：parseXxx(str)

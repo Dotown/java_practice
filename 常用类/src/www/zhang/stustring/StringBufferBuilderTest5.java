@@ -8,7 +8,7 @@ import org.junit.Test;
  * @author Dotown
  * @create 2020-12-25-20:10
  */
-public class StringBufferBuilderTest {
+public class StringBufferBuilderTest5 {
     /*
     String：不可变的字符序列
     StringBuffer：可变的字符序列，线程安全的，效率低
