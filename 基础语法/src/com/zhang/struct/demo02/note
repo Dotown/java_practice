@@ -1,0 +1,13 @@
+super:
+    1.使用super调用父类的构造方法，必须在构造方法的第一个
+    2.super的构造方法和this的构造方法不能同时出现在有参构造中  因为他俩都需要在首行
+    3.只有子类才可以用super方法调用
+
+
+final、static、private方法不能重写！
+重写：
+    1.方法名必须相同
+    2.参数列表必须相同
+    3.修饰符:范围可以扩大但不能缩小 public>protected>Default>private
+    4.抛出的异常：范围，可以被缩小，但不能被扩大 ClassNotFoundException -->Exception(大)
+
