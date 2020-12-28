@@ -1,8 +1,8 @@
 package com.zhang.struct;
 
-import www.zhang.struct.demo04.Person;
-import www.zhang.struct.demo04.Student;
-import www.zhang.struct.demo04.Teacher;
+import com.zhang.struct.demo04.Person;
+import com.zhang.struct.demo04.Student;
+import com.zhang.struct.demo04.Teacher;
 
 public class AppDemo04 {
     public static void main(String[] args) {

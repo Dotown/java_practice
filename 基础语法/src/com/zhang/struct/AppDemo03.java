@@ -1,7 +1,7 @@
 package com.zhang.struct;
 
-import www.zhang.struct.demo03.FatherB;
-import www.zhang.struct.demo03.SonA;
+import com.zhang.struct.demo03.FatherB;
+import com.zhang.struct.demo03.SonA;
 
 public class AppDemo03 {
     public static void main(String[] args) {

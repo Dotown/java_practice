@@ -1,5 +1,7 @@
 package com.zhang.java;
 
+import java.util.ArrayList;
+
 /**
  * 注解的使用：
  * 一、理解Anotation：
@@ -16,8 +18,23 @@ package com.zhang.java;
  * @SuppressWarnings: 抑制编译器警告
  * 示例三：跟踪代码依赖性，实现替代配置文件功能
  *
+ * 三、如何自定义注解
+ * 1.注解声明为:@interface
+ * 2.内部定义成员，通常使用value表示
+ * 3.可以指定成员的默认值，使用default定义
+ * 4.如果自定义注解没有成员，表明是一个标识作用。 //Override
+ * 5.如果注解有成员，在使用注解时，需要指明成员的值。
+ *
+ * 自定义注解必须配上注解的信息处理流程(使用反射)才有意义。
+ *
  * author PC
  * create 2020-12-28-1:59
  */
+@MyAnnotation(value = "hi")
 public class Annotation {
+    @SuppressWarnings("unused")
+    int num = 10;
+    @SuppressWarnings({"unused","rawtypes"})
+    ArrayList list = new ArrayList();
+
 }
