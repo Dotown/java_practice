@@ -11,7 +11,7 @@ import java.util.Comparator;
  *     但是在实际开发场景，需要对多个对象进行排序，需要比较对象的大小。
  *     Comparable 自然排序或者Comparator 定制排序
  * 二、Comparable与 Comparator对比
- *      Comparable方式一定确定，保证Comparable接口实现类的对象在任何位置都可以比较大小。
+ *      Comparable方式一旦确定，保证Comparable接口实现类的对象在任何位置都可以比较大小。
  *      Comparator接口属于临时性比较。
  * @author Dotown
  * @create 2020-12-26-19:48
@@ -25,7 +25,7 @@ public class CompareTest9 {
     如果当前对象this大于形参对象obj，则返回正整数，
     如果当前对象this小于形参对象obj，则返回负整数，
     如果当前对象this等于形参对象obj，则返回零。
-    4.对于自定义类，如果需要排序，可以让自定义类实现Comparable接口，重写compareTo()方法，compareTo()方法中
+    4.对于自定义类，如果需要排序，可以让自定义类实现Comparable接口，重写compareTo()方法，compareTo()方法中指名如何排序。
      */
     @Test
     public void test1(){
