@@ -3,14 +3,12 @@ package com.zhang.java;
 import java.lang.annotation.*;
 
 /**
- * @author Dotown
- * @create 2020-12-28-20:59
+ * author PC
+ * create 2020-12-29-14:51
  */
 @Inherited
-@Repeatable(MyAnnotations.class)        //JDK8之后的声明方式
 @Retention(RetentionPolicy.RUNTIME)
 @Target({ElementType.TYPE,ElementType.FIELD,ElementType.METHOD,ElementType.TYPE_USE})
-
-public @interface MyAnnotation {
-        String value() default "hello";
+public @interface MyAnnotations{
+    MyAnnotation[] value(); //这是一种成员变量
 }

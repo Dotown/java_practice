@@ -1,0 +1,33 @@
+package com.zhang.java;
+
+import java.util.Objects;
+
+/**
+ * author PC
+ * create 2020-12-29-16:47
+ */
+public class Person1 {
+    private String name;
+    private int age;
+
+    public Person1() {
+    }
+
+    public Person1(String name, int age) {
+        this.name = name;
+        this.age = age;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Person1 person1 = (Person1) o;
+        return age == person1.age && Objects.equals(name, person1.name);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(name, age);
+    }
+}
