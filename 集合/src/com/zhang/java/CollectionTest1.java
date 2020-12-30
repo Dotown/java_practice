@@ -1,7 +1,6 @@
 package com.zhang.java;
 import org.junit.Test;
 
-import java.security.AllPermission;
 import java.util.*;
 
 /**
@@ -141,5 +140,4 @@ public class CollectionTest1 {
 
         //14.iterator():返回Iterator接口的实例，用于遍历集合元素。放在IteratorTest.java中测试
     }
-
 }
