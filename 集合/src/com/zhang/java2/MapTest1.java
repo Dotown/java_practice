@@ -1,5 +1,11 @@
 package com.zhang.java2;
 
+import org.junit.Test;
+
+import java.util.HashMap;
+import java.util.Hashtable;
+import java.util.Map;
+
 /**
  *
  * 一、Map的实现类的结构：
@@ -51,8 +57,32 @@ package com.zhang.java2;
  *          4.1 形成链表时，七上八下（jdk7:新的元素指向旧的元素。jdk8：旧的元素指向新的元素）
  *          4.2 当数组的某一个索引位置上的元素以链表形式存在的数据个数 >= 8 且当前数组的长度 > 64时，此时此索引位置上的所数据改为使用红黑树存储。
  *
+ *      DEFAULT_INITIAL_CAPACITY : HashMap的默认容量，16
+ *      DEFAULT_LOAD_FACTOR：HashMap的默认加载因子：0.75
+ *      threshold：扩容的临界值，=容量*填充因子：16 * 0.75 => 12
+ *      TREEIFY_THRESHOLD：Bucket中链表长度大于该默认值，转化为红黑树:8
+ *      MIN_TREEIFY_CAPACITY：桶中的Node被树化时最小的hash表容量:64
+ *
+ * 四、LinkedHashMap的底层实现原理（了解）
+ *     源码中：
+ *     static class Entry<K,V> extends HashMap.Node<K,V> {
+ *         Entry<K,V> before, after;//能够记录添加的元素的先后顺序
+ *         Entry(int hash, K key, V value, Node<K,V> next) {
+ *         super(hash, key, value, next);
+ *         }
+ *     }
+ *
+ *     PS:实际上，HashSet使用的是HashMap存储的，Set的值放在key当中，value为一个常量new Object()
+ *
  * author PC
  * create 2021-01-04-23:29
  */
 public class MapTest1 {
+
+    @Test
+    public void test1(){
+        Map map = new HashMap();
+        //Map map = new Hashtable();
+        map.put(null,123);
+    }
 }
