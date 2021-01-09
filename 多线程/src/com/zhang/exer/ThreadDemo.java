@@ -1,4 +1,4 @@
-package com.zhang.day1;
+package com.zhang.exer;
 
 /**
  * 创建两个分线程，其中一个遍历100以内的偶数，另一个线程遍历100以内的奇数
