@@ -7,3 +7,9 @@ JAVA至少有三个线程：main线程、gc垃圾回收线程、异常处理线�
     new Thread(()->{
         System.out.println("重写的方法");
     }).start();
+
+
+    Runnable比继承的方式更好
+    1.继承Thread的方法可能还需要继承其他类
+    2.三个窗口卖100张票，使用Runnable方式写的票数可以不加static
+    3.Runnable的synchronized(this),继承是synchronized(Test.Class)
