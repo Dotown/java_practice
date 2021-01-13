@@ -10,7 +10,7 @@ package com.zhang.day1;
  * @author Dotown
  * @create 2020-12-23-19:55
  */
-class MyThread extends Thread{
+class MyThread1 extends Thread{
     @Override
     public void run() {
         for (int i = 0; i < 100; i++) {
@@ -22,13 +22,19 @@ class MyThread extends Thread{
 }
 public class ThreadTest1{
     public static void main(String[] args) {
-        MyThread t1 = new MyThread();
+        MyThread1 t1 = new MyThread1();
         t1.start();//1.启动当前线程2.调用当前线程的run()
         //t1.run(); //不能通过直接调用run()方法启动线程
-        //t1.start();//不可以还让已经start()的线程去执行。会报IllegalThreadStateException的错误
+        //t1.start();//2.不可以还让已经start()的线程去执行。会报IllegalThreadStateException的错误
 
-        //选举要重新创建一个线程的对象
-        MyThread t2 = new MyThread();
+        //需要要重新创建一个线程的对象
+        MyThread1 t2 = new MyThread1();
         t2.start();
+
+        for (int i = 0; i < 100; i++) {
+            if (i%2==1){
+                System.out.println(Thread.currentThread().getName()+"-----"+ i);
+            }
+        }
     }
 }
