@@ -1,4 +1,4 @@
-package com.zhang.day1;
+package com.zhang.java;
 
 /**
  * 测试Thread中的常用方法：

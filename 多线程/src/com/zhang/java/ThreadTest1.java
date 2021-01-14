@@ -1,4 +1,4 @@
-package com.zhang.day1;
+package com.zhang.java;
 
 /**
  * 多线程的创建，方式一：继承于Thread类
