@@ -15,7 +15,7 @@ public class IDEADebug6 {
         System.out.println(sb.length());//  4
         System.out.println(sb);//   "null"
 
-        StringBuffer sb1 = new StringBuffer(str);
+        StringBuffer sb1 = new StringBuffer(str);   //初始化时要获得str.length,此时会出错
         System.out.println(sb1);//空指针异常
     }
 }

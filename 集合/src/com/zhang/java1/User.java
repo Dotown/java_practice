@@ -13,6 +13,7 @@ public class User implements Comparable{
     //自然排序
     @Override
     public int compareTo(Object o) {
+        System.out.println("自然排序了");
         if(o instanceof User){
             User u = (User) o;
             return this.name.compareTo(u.name);

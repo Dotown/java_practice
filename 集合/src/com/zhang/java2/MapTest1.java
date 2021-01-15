@@ -1,9 +1,9 @@
 package com.zhang.java2;
 
+import com.zhang.java1.User;
 import org.junit.Test;
 
 import java.util.HashMap;
-import java.util.Hashtable;
 import java.util.Map;
 
 /**
@@ -84,5 +84,11 @@ public class MapTest1 {
         Map map = new HashMap();
         //Map map = new Hashtable();
         map.put(null,123);
+
+        User u1 = new User("Tom", 55);
+        User u2 = new User("Jack", 33);
+        map.put(u1,88);
+        map.put(u2,77);
+        System.out.println(map);
     }
 }
