@@ -1,5 +1,7 @@
 package com.zhang.java;
 
+import java.util.concurrent.*;
+
 /**
  * 创建线程的方式四：使用线程池
  *
@@ -14,7 +16,50 @@ package com.zhang.java;
  * author PC
  * create 2021-01-15-11:04
  */
+class RunThread implements Runnable{
+    @Override
+    public void run() {
+        for (int i = 0; i < 100; i++) {
+            if (i%2==0){
+                System.out.println(Thread.currentThread().getName()+":"+i);
+            }
+        }
+    }
+}
+class CallThread implements Callable {
+    @Override
+    public Integer call() throws Exception {
+        int sum = 0;
+        for (int i = 0; i < 100; i++) {
+            if (i%2==0){
+                System.out.println(Thread.currentThread().getName()+":"+i);
+                sum+=i;
+            }
+        }
+        return sum;
+    }
+}
+
 public class ThreadPool9 {
+    public static void main(String[] args) {
+        //1.提供指定线程数量的线程池
+        ExecutorService service = Executors.newFixedThreadPool(10);
 
+        ThreadPoolExecutor service1 = (ThreadPoolExecutor)service;
+        //设置线程池的属性
+//        System.out.println(service.getClass());
+//        service1.setCorePoolSize(15);
+//        service1.setKeepAliveTime();
 
+        service.execute(new RunThread());
+
+        Future<Integer> result = service.submit(new CallThread());
+        try {
+            System.out.println(result.get());
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        } catch (ExecutionException e) {
+            e.printStackTrace();
+        }
+    }
 }

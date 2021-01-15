@@ -13,3 +13,11 @@ JAVA至少有三个线程：main线程、gc垃圾回收线程、异常处理线�
     1.继承Thread的方法可能还需要继承其他类
     2.三个窗口卖100张票，使用Runnable方式写的票数可以不加static
     3.Runnable的synchronized(this),继承是synchronized(Test.Class)
+
+    submit()方法是在ExecutorService中声明的方法，在AbstractExecutorService就已经有了具体的实现，在ThreadPoolExecutor中并没有对其
+    进行重写，这个方法也是用来向线程池提交任务的，但是它和execute()方法不同，它能够返回任务执行的结果，去看submit()方法的实现，会发现它实际上
+    还是调用的execute()方法。
+    eg：ExecutorService service = Executors.newFixedThreadPool(10);
+        service.execute(new RunThread());
+        Future result = service.submit(new CallThread());
+        result.get();
