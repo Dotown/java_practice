@@ -80,7 +80,6 @@ public class GenericTest1 {
         map.put("AA",123);
         map.put("BB",456);
         map.put("CC",789);
-
         //泛型的嵌套
         Set<Map.Entry<String, Integer>> e = map.entrySet();
         Iterator<Map.Entry<String, Integer>> iterator = e.iterator();
