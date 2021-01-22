@@ -29,6 +29,11 @@ public class FileTest1 {
      windows:\\
      unix:/
      可以使用File.separator作为分隔符
+     IDEA中：
+     如果大家开发使用JUnit中的单元测试方法测试，相对路径即为当前Module下。
+     如果大家使用main()测试，相对路径即为当前的Project下。
+     Eclipse中：
+     不管使用单元测试方法还是使用main()测试，相对路径都是当前的Project下。
      */
     @Test
     public void test(){
@@ -136,11 +141,11 @@ public boolean isHidden() ：判断是否隐藏
     }
     /*
     创建硬盘中对应的文件或文件目录
-public boolean createNewFile() ：创建文件。若文件存在，则不创建，返回false
-public boolean mkdir() ：创建文件目录。如果此文件目录存在，就不创建了。如果此文件目录的上层目录不存在，也不创建。
-public boolean mkdirs() ：创建文件目录。如果此文件目录存在，就不创建了。如果上层文件目录不存在，一并创建
+    public boolean createNewFile() ：创建文件。若文件存在，则不创建，返回false
+    public boolean mkdir() ：创建文件目录。如果此文件目录存在，就不创建了。如果此文件目录的上层目录不存在，也不创建。
+    public boolean mkdirs() ：创建文件目录。如果此文件目录存在，就不创建了。如果上层文件目录不存在，一并创建
     删除磁盘中的文件或文件目录
-public boolean delete()：删除文件或者文件夹
+    public boolean delete()：删除文件或者文件夹
     删除注意事项：Java中的删除不走回收站。
      */
     @Test
