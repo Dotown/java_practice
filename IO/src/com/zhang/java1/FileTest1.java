@@ -176,5 +176,4 @@ public boolean delete()：删除文件或者文件夹
         file3 = new File("G:\\JAVASE\\java_practice\\IO\\IO1\\io2");
         System.out.println(file3.delete());
     }
-
 }
