@@ -21,7 +21,7 @@ import java.util.*;
  * 元视图操作的方法：
  *   Set keySet()：返回所有key构成的Set集合
  *   Collection values()：返回所有value构成的Collection集合
- *   Set entrySet()：返回所有key-value对构成的Set集合
+ *   Set  entrySet()：返回所有key-value对构成的Set集合
  *
  * 总结：常用方法：
  *   添加：put(Object key,Object value)

@@ -11,11 +11,11 @@ import java.io.*;
  * 3.流的角色：节点流、处理流
  *
  * 二、流的体系结构
- * 抽象基类          节点流                缓冲流
- * InputStream      FileInputStream     BufferedInputStream
- * OutputStream     FileOutputStream    BufferedOutputStream
- * Reader           FileReader          BufferedReader
- * Writer           FileWriter          BufferedWriter
+ * 抽象基类          节点流(文件流)                                    处理流(缓冲流)
+ * InputStream      FileInputStream(read(byte[] buffer))           BufferedInputStream(read(byte[] buffer))
+ * OutputStream     FileOutputStream(write(byte[] buffer,0,len)    BufferedOutputStream(write(byte[] buffer,0,len) / flush()
+ * Reader           FileReader(read(char[] data))                  BufferedReader(read(char[] cbuf) / readLine())
+ * Writer           FileWriter(write(char[] data,0,len)            BufferedWriter(write(char[] cbuf,0,len) / flush()
  *
  * author PC
  * create 2021-01-23-21:11
@@ -120,7 +120,7 @@ public class FileReaderWriterTest2 {
       如果流使用的构造器是：FileWriter(file,true):不会对原有文件覆盖，而是在原有文件基础上追加内容
      */
     @Test
-    public void test2() throws IOException {
+    public void test2(){
         FileWriter fw = null;
         try {
             File file = new File("fileWriter");
@@ -151,8 +151,8 @@ public class FileReaderWriterTest2 {
             File destFile = new File("hello2.txt");
 
             //不能使用字符流来处理图片等字节数据
-//            File srcFile = new File("爱情与友情.jpg");
-//            File destFile = new File("爱情与友情1.jpg");
+//            File srcFile = new File("sql.jpg");
+//            File destFile = new File("sql1.jpg");
 
 
             //2.创建输入流和输出流的对象
