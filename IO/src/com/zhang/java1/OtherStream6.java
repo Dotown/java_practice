@@ -99,7 +99,7 @@ public class OtherStream6 {
     @Test
     public void test3() throws IOException {
         DataOutputStream dos = new DataOutputStream(new FileOutputStream("data.txt"));
-        dos.writeUTF("刘建辰");
+        dos.writeUTF("数据");
         dos.flush();//刷新操作，将内存中的数据写入文件
         dos.writeInt(23);
         dos.flush();

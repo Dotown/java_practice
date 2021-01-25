@@ -154,11 +154,9 @@ public class FileReaderWriterTest2 {
 //            File srcFile = new File("sql.jpg");
 //            File destFile = new File("sql1.jpg");
 
-
             //2.创建输入流和输出流的对象
             fr = new FileReader(srcFile);
             fw = new FileWriter(destFile);
-
 
             //3.数据的读入和写出操作
             char[] cbuf = new char[5];
@@ -192,15 +190,12 @@ public class FileReaderWriterTest2 {
             } catch (IOException e) {
                 e.printStackTrace();
             }
-
             try {
                 if(fr != null)
                     fr.close();
             } catch (IOException e) {
                 e.printStackTrace();
             }
-
         }
-
     }
 }
