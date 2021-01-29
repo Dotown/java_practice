@@ -43,6 +43,14 @@ public class Person {
         System.out.println("你好，我是一个人");
     }
 
+    @Override
+    public String toString() {
+        return "Person{" +
+                "name='" + name + '\'' +
+                ", age=" + age +
+                '}';
+    }
+
     private String showNation(String nation){
         System.out.println("我的国籍是：" + nation);
         return nation;
