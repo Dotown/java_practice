@@ -1,6 +1,6 @@
 package com.zhang.egtest;
 
-import com.zhang.eg.Person;
+import com.zhang.refer.Person;
 import org.junit.Test;
 
 import java.lang.reflect.Constructor;

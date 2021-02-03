@@ -1,11 +1,10 @@
 package com.zhang.egtest;
 
-import com.zhang.eg.Person;
+import com.zhang.refer.Person;
 import org.junit.Test;
 
 import java.lang.reflect.Field;
 import java.lang.reflect.Modifier;
-import java.lang.reflect.TypeVariable;
 
 /**
  * 获取当前运行时类的属性结构
