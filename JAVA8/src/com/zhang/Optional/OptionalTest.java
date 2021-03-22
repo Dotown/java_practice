@@ -21,6 +21,7 @@ Optional.empty() : 创建一个空的 Optional 实例
 Optional.ofNullable(T t)：t可以为null
 
  */
+    //of和get一起使用
     @Test
     public void test1(){
         Girl girl = new Girl();
@@ -29,7 +30,7 @@ Optional.ofNullable(T t)：t可以为null
         Optional<Girl> optionalGirl = Optional.of(girl);
 
     }
-
+    //ofNullable和orElse一起使用
     @Test
     public void test2(){
         Girl girl = new Girl();

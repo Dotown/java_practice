@@ -17,6 +17,7 @@ import java.util.stream.Stream;
  * create 2021-02-04-1:13
  */
 public class StreamAPITest2 {
+    //筛选
     @Test
     public void test(){
         List<Employee> employees = EmployeeData.getEmployees();
