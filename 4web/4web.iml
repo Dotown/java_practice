@@ -9,6 +9,7 @@
         <webroots>
           <root url="file://$MODULE_DIR$/web" relative="/" />
         </webroots>
+        <sourceRoots />
       </configuration>
     </facet>
   </component>
@@ -22,7 +23,7 @@
     <orderEntry type="module-library">
       <library>
         <CLASSES>
-          <root url="jar://$MODULE_DIR$/bin/servlet-api.jar!/" />
+          <root url="jar://$MODULE_DIR$/web/WEB-INF/bin/servlet-api.jar!/" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />
