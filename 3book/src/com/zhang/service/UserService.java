@@ -26,4 +26,5 @@ public interface UserService {
      * @return 如果存在则返回true，不存在则返回false
      */
     public boolean existUsername(String username);
+
 }
