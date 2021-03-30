@@ -12,8 +12,15 @@ import java.lang.reflect.Method;
  * create 2021-03-29-22:51
  */
 public abstract class BaseServlet extends HttpServlet {
+
+    @Override
+    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        doPost(req, resp);
+    }
+
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        req.setCharacterEncoding("UTF-8");
         //优化一：合并 LoginServlet 和 RegistServlet 程序为 UserServlet 程序
         String action = req.getParameter("action");
         System.out.println(action);

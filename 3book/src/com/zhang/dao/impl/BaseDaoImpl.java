@@ -87,7 +87,7 @@ public abstract class BaseDaoImpl {
     public Object queryForSingleValue(String sql,Object ...args){
         Connection conn = JdbcUtils.getConnection();
         try {
-            queryRunner.query(conn,sql,new ScalarHandler(),args);
+            return queryRunner.query(conn,sql,new ScalarHandler(),args);
         } catch (SQLException throwables) {
             throwables.printStackTrace();
         } finally {
