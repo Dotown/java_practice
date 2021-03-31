@@ -35,7 +35,7 @@ public class BookServlet extends BaseServlet{
     protected void add(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         Book book = WebUtils.copyParamToBean(req.getParameterMap(), new Book());
         bookService.addBook(book);
-        req.getRequestDispatcher("/manager/bookServlet?action=list").forward(req,resp);
+        req.getRequestDispatcher("/manager/bookServlet?action=page").forward(req,resp);
     }
     protected void getBook(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         String id = req.getParameter("id");

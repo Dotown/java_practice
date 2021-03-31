@@ -14,7 +14,10 @@ public class BookDaoImpl extends BaseDaoImpl implements BookDao {
     public int addBook(Book book) {
         String sql = "INSERT INTO t_book(`id` , `name` , `author` , `price` , `sales` , `stock` , `img_path`) " +
                 "VALUES(? , ? , ? , ?, ? , ? , ?)";
-        return update(sql, book.getId(), book.getName(), book.getAuthor(), book.getPrice(), book.getSales(), book.getStock(), book.getImgPath());
+        if(book.getImgPath()==""||book.getImgPath()==null){
+            book.setImgPath("static/img/default.jpg");
+        }
+            return update(sql, book.getId(), book.getName(), book.getAuthor(), book.getPrice(), book.getSales(), book.getStock(), book.getImgPath());
     }
 
     @Override

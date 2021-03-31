@@ -25,7 +25,7 @@ public class WebUtils {
             int i = Integer.parseInt(object);
             return i;
         } catch (Exception e) {
-            e.printStackTrace();
+//            e.printStackTrace();
         }
         return defaultValue;
     }

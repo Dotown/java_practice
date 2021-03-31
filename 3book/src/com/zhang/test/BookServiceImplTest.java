@@ -17,7 +17,7 @@ public class BookServiceImplTest {
     @Test
     public void page() {
         BookService bookService = new BookServiceImpl();
-        Page<Book> page = bookService.page(2, 4);
+        Page<Book> page = bookService.page(1, 10);
         System.out.println(page);
     }
 }

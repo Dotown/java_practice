@@ -47,7 +47,7 @@ public class BookServiceImpl implements BookService {
         PageDao pageDao = new PageDaoImpl();
         int pageTotalCount = pageDao.queryForPageTotalCount();
         //1.PageNo
-        bookPage.setPageNo(pageNo);
+//        bookPage.setPageNo(pageNo);   ，因为要和pageTotal比较，会出现空指针
         //2.pageTotal
         int pageTotal = pageTotalCount / pageSize;
         if (pageTotalCount%pageSize!=0){
@@ -58,6 +58,8 @@ public class BookServiceImpl implements BookService {
         bookPage.setPageTotalCount(pageTotalCount);
         //4.pageSize
         bookPage.setPageSize(pageSize);
+        //1.PageNo
+        bookPage.setPageNo(pageNo);
         //5.item
         int begin = pageSize*(bookPage.getPageNo()-1);
         List<Book> books = pageDao.queryForPageItems(begin, pageSize);

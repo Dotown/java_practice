@@ -9,17 +9,18 @@ import java.util.List;
 public class Page<T> {
     private static final Integer PAGE_SIZE = 4;
 
-    private Integer PageNo;
+    private Integer pageNo;
     private Integer pageTotal;
     private Integer pageTotalCount;
     private Integer pageSize = PAGE_SIZE;
     private List<T> item;
+    private String url;
 
     public Page() {
     }
 
     public Page(Integer pageNo, Integer pageTotal, Integer pageTotalCount, Integer pageSize, List<T> item) {
-        PageNo = pageNo;
+        pageNo = pageNo;
         this.pageTotal = pageTotal;
         this.pageTotalCount = pageTotalCount;
         this.pageSize = pageSize;
@@ -31,7 +32,6 @@ public class Page<T> {
     }
 
     public void setPageSize(Integer pageSize) {
-        this.pageSize = pageSize;
     }
 
     public List<T> getItem() {
@@ -43,11 +43,17 @@ public class Page<T> {
     }
 
     public Integer getPageNo() {
-        return PageNo;
+        return pageNo;
     }
 
     public void setPageNo(Integer pageNo) {
-        PageNo = pageNo;
+        if(pageNo<1){
+            pageNo = 1;
+        }
+        if(pageNo>this.pageTotal){
+            pageNo = pageTotal;
+        }
+        this.pageNo = pageNo;
     }
 
     public Integer getPageTotal() {
@@ -69,7 +75,7 @@ public class Page<T> {
     @Override
     public String toString() {
         return "Page{" +
-                "PageNo=" + PageNo +
+                "PageNo=" + pageNo +
                 ", pageTotal=" + pageTotal +
                 ", pageTotalCount=" + pageTotalCount +
                 ", pageSize=" + pageSize +
