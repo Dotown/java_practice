@@ -22,11 +22,7 @@
 	<div id="header">
 			<img class="logo_img" alt="" src="static/img/logo.gif" >
 			<span class="wel_word">图书管理系统</span>
-			<div>
-				<a href="pages/manager/book_manager.jsp">图书管理</a>
-				<a href="pages/manager/order_manager.jsp">订单管理</a>
-				<a href="index.jsp">返回商城</a>
-			</div>
+	<%@include file="/pages/common/manager_menu.jsp"%>
 	</div>
 	
 	<div id="main">
@@ -39,7 +35,7 @@
 				<td>库存</td>
 				<td colspan="2">操作</td>
 			</tr>
-			<c:forEach items="${requestScope.books}" var="book">
+			<c:forEach items="${requestScope.page.item}" var="book">
 			<tr>
 				<td>${book.name}</td>
 				<td>${book.price}</td>
@@ -61,8 +57,32 @@
 				<td><a href="pages/manager/book_edit.jsp">添加图书</a></td>
 			</tr>	
 		</table>
-	</div>
 
+		<div id="page_nav">
+			<a href="manager/bookServlet?action=page&pageNo=1">首页</a>
+			<c:if test="${requestScope.page.pageNo>1}">
+				<a href="manager/bookServlet?action=page&pageNo=${requestScope.page.pageNo-1}">上一页</a>
+			</c:if>
+			<a href="#">3</a>
+			【4】
+			<a href="#">5</a>
+			<c:if test="${requestScope.page.pageNo<requestScope.page.pageTotal}">
+				<a href="manager/bookServlet?action=page&pageNo=${requestScope.page.pageNo+1}">下一页</a>
+			</c:if>
+
+			<a href="manager/bookServlet?action=page&pageNo=${requestScope.page.pageTotal}">末页</a>
+			共${requestScope.page.pageTotal}页，${requestScope.page.pageTotalCount}条记录 到第<input class="pageNumber" value="${requestScope.page.pageNo}" name="pn" id="pn_input"/>页
+			<input class="pageBtn" type="button" value="确定">
+			<script type="text/javascript">
+				$(function (){
+					$(".pageBtn").click(function (){
+						var pageNo = $(".pageNumber").val();
+						location.href="${base}manager/bookServlet?action=page&pageNo="+pageNo;
+					})
+				})
+			</script>
+		</div>
+	</div>
 	<%--静态包含页脚内容--%>
 	<%@include file="/pages/common/footer.jsp"%>
 </body>

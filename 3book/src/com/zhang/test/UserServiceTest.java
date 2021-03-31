@@ -5,8 +5,6 @@ import com.zhang.service.UserService;
 import com.zhang.service.impl.UserServiceImpl;
 import org.junit.Test;
 
-import static org.junit.Assert.*;
-
 /**
  * author PC
  * create 2021-03-25-1:26

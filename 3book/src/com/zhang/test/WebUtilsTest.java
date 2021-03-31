@@ -6,8 +6,6 @@ import org.junit.Test;
 
 import java.util.HashMap;
 
-import static org.junit.Assert.*;
-
 /**
  * author PC
  * create 2021-03-29-23:35
@@ -26,5 +24,11 @@ public class WebUtilsTest {
         System.out.println(user);
 
     }
-
+    @Test
+    public void parseInt(){
+        String a ="b";
+        String b ="3";
+        System.out.println("WebUtils.parseInt(a,5) = " + WebUtils.parseInt(a, 5));
+        System.out.println("WebUtils.parseInt(b,0) = " + WebUtils.parseInt(b, 0));
+    }
 }

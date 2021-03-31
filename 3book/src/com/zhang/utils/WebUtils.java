@@ -2,8 +2,6 @@ package com.zhang.utils;
 
 import org.apache.commons.beanutils.BeanUtils;
 
-import javax.servlet.http.HttpServletRequest;
-import java.lang.reflect.InvocationTargetException;
 import java.util.Map;
 
 /**
@@ -20,5 +18,15 @@ public class WebUtils {
             e.printStackTrace();
         }
         return bean;
+    }
+
+    public static int parseInt(String object,int defaultValue){
+        try {
+            int i = Integer.parseInt(object);
+            return i;
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return defaultValue;
     }
 }

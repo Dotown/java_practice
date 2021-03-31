@@ -1,6 +1,7 @@
 package com.zhang.service;
 
 import com.zhang.bean.Book;
+import com.zhang.bean.Page;
 
 import java.util.List;
 
@@ -18,4 +19,5 @@ public interface BookService {
     public Book queryBookById(Integer id);
 
     public List<Book> queryBooks();
+    public Page<Book> page(int pageNo, int pageSize);
 }
